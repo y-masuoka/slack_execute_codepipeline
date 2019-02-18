@@ -1,0 +1,31 @@
+service: serverless-codepipeline
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: ap-northeast-1
+  stage: dev
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - codepipeline:StartPipelineExecution
+      Resource:
+        - "arn:aws:codepipeline:*"
+  usagePlan:
+    quota:
+      limit: 100
+      offset: 2
+      period: MONTH
+
+functions:
+  
+  execute:
+    handler: handler.execute
+    environment:
+      TOKEN: ${env:TOKEN}
+    events:
+      - http:
+          path: /
+          method: post
+          cors: true
+          private: false
