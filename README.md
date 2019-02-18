@@ -32,7 +32,7 @@ $ sls deploy
 6. Slash Commandsの登録画面からURLにコピーした値を設定してその他項目を入力して登録する
 
 # 実行
-Slackで以下コマンドを実行する
+Slackで以下コマンドを実行する(Slash Commandsを/deployで登録した場合の例)
 ```
 /deploy ${CodePipeline名}
 ```
