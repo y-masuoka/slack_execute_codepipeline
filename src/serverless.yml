@@ -23,6 +23,7 @@ functions:
     handler: handler.execute
     environment:
       TOKEN: ${env:TOKEN}
+      USER_ID_LIST:  ${env:USER_ID_LIST}
     events:
       - http:
           path: /

@@ -15,6 +15,7 @@ $ git clone https://github.com/y-masuoka/slack_execute_codepipeline.git
 |AWS_ACCESS_KEY_ID|AWS実行ユーザのアクセスキー|
 |AWS_SECRET_ACCESS_KEY|AWS実行ユーザのシークレットキー|
 |TOKEN|Slash Commandsの登録画面記載のトークン|
+|USER_ID_LIST|実行ユーザを制限する場合、許可するSlackのユーザのIDをカンマ区切りで指定する|
 
 3. Dockerを起動する
 ```

@@ -10,6 +10,10 @@ module.exports.execute = (event, context, callback) => {
   if(params.token !== process.env.TOKEN) {
     return context.succeed({statusCode: 403, body: '{"message":"Forbidden"}'});
   }
+  
+  if(process.env.USER_ID_LIST && process.env.USER_ID_LIST.split(',').indexOf(params.user_id) === -1) {
+    return context.succeed({statusCode: 403, body: '{"message":"Forbidden"}'});
+  }
 
   const execute = (params) => {
     return new Promise((resolve, reject) => {
